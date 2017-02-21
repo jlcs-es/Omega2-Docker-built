@@ -28,11 +28,10 @@ RUN echo "CONFIG_TARGET_ramips=y" > .config  && \
     echo "CONFIG_TARGET_ramips_mt7688_DEVICE_omega2=y" >> .config && \
     make defconfig
 
+RUN make tools/install
+RUN make toolchain/install
 
-
-# RUN make
-
-# ENV PATH "$PATH:/lede/staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.15/bin:/lede/staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.15/bin"
+ENV PATH "$PATH:/lede/staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.15/bin:/lede/staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.15/bin"
 
 
 # Use this command to run with shared directory:
